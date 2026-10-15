@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d20">
+  <meta name="description" content="A calm, cosmic space to keep track of what matters.">
+  <title>Orbit — Cosmic To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <div class="star-field star-field--far"></div>
+    <div class="star-field star-field--near"></div>
+    <div class="planet-glow"></div>
+  </div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Orbit home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>orbit<span class="brand-period">.</span></span>
+      </a>
+      <p class="topbar-note"><span class="status-dot"></span> YOUR SPACE, YOUR PACE</p>
+    </header>
+
+    <section class="intro" id="top" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="eyebrow-line"></span> A LITTLE ROOM TO THINK</p>
+      <h1 id="page-title">Make space<br>for <span>what matters.</span></h1>
+      <p class="intro-copy">One small step at a time. Your plans are right here, whenever you need them.</p>
+    </section>
+
+    <section class="dashboard" aria-label="Your tasks">
+      <div class="stats" aria-label="Task summary">
+        <div class="stat">
+          <span class="stat-label">IN ORBIT</span>
+          <span class="stat-value" id="total-count">0</span>
+          <span class="stat-caption">total tasks</span>
+        </div>
+        <div class="stat stat--done">
+          <span class="stat-label">LANDED</span>
+          <span class="stat-value" id="completed-count">0</span>
+          <span class="stat-caption">completed</span>
+        </div>
+        <div class="stat stat--pending">
+          <span class="stat-label">IN FLIGHT</span>
+          <span class="stat-value" id="pending-count">0</span>
+          <span class="stat-caption">still to do</span>
+        </div>
+        <div class="orbit-art" aria-hidden="true">
+          <span class="orbit-ring orbit-ring--one"></span>
+          <span class="orbit-ring orbit-ring--two"></span>
+          <span class="orbit-core"></span>
+          <span class="orbit-moon"></span>
+        </div>
+      </div>
+
+      <form class="task-form" id="task-form">
+        <label class="visually-hidden" for="task-input">What would you like to do?</label>
+        <span class="input-spark" aria-hidden="true">✦</span>
+        <input id="task-input" name="task" type="text" maxlength="160" placeholder="What’s on your mind?" autocomplete="off" required>
+        <button class="add-button" type="submit"><span aria-hidden="true">+</span><span>Add task</span></button>
+      </form>
+
+      <div class="list-toolbar">
+        <h2>Your missions <span class="list-count" id="visible-count">0</span></h2>
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active</button>
+          <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+        </div>
+      </div>
+
+      <ul class="task-list" id="task-list" aria-live="polite" aria-relevant="additions removals text"></ul>
+      <p class="storage-note"><span aria-hidden="true">✧</span> Your list is saved on this device, automatically.</p>
+    </section>
+
+    <footer class="footer"><span>TAKE IT ONE ORBIT AT A TIME</span><span class="footer-star" aria-hidden="true">✦</span></footer>
+  </main>
+</body>
+</html>
